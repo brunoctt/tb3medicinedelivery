@@ -1,11 +1,15 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy
+import cv2
 from cv_bridge import CvBridge, CvBridgeError
 from sensor_msgs.msg import Image
 from tb3_control.srv import CameraRes, CameraResResponse
 
 class myCamera():
+    
+    __image_path = '/home/bruno/turtlebot3ros/catkin_ws/src/tb3_control/src/'
+    __image_name = 'robot_camera.jpg'
 
     def __init__(self):
         print('init camera')
@@ -21,7 +25,17 @@ class myCamera():
         self.cv_image = None
         
     def callback_camera_service(self, request):
-        return self.cv_image
+        res = CameraResResponse()
+        
+        try:
+            cv2.imwrite(self.__image_path + self.__image_name, self.cv_image)
+            res.status = 200
+        except:
+            res.status = 500
+            
+        res.path = self.__image_path + self.__image_name
+        
+        return res
 
     def callback_camera_subscriber(self, msg):
         # print('callback camera')

@@ -1,2 +1,3 @@
 ---
-int32 res
+int32 status
+string path

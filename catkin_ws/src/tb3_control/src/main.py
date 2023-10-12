@@ -1,11 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy
 import cv2
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Twist
 from tf.transformations import euler_from_quaternion
-# from tb3_control.srv import CameraRes, CameraResResponse
+from tb3_control.srv import CameraRes, CameraResResponse
 
 
 class Robot:
@@ -26,29 +26,32 @@ class Robot:
         q = msg.pose.pose.orientation
         self.orientation = round(euler_from_quaternion([q.x, q.y, q.z, q.w])[-1], 2)
         
-    # def get_image(self):
-    #     rospy.wait_for_service('camera_result_service')
-    #     try:
-    #         # Connect to the server
-    #         res = rospy.ServiceProxy('camera_result_service', CameraRes)
+    def get_image(self):
+        rospy.wait_for_service('camera_result_service')
+        try:
+            # Connect to the server
+            res = rospy.ServiceProxy('camera_result_service', CameraRes)
 
-    #         # Call the service
-    #         response: CameraResResponse = res()
-    #         return response.res
+            # Call the service
+            response: CameraResResponse = res()
+            if response.status == 200:
+                return cv2.imread(response.path)
+            print("Server error")
 
-    #     # If the connection fails (DEBUG)
-    #     except rospy.ServiceException as e:
-    #         print("Service call failed: %s"%e)
+        # If the connection fails (DEBUG)
+        except rospy.ServiceException as e:
+            print("Service call failed: %s"%e)
         
-    # def show_image(self):
-    #     cv2.imshow("Robot View", self.get_image())
-    #     cv2.waitKey(0) 
-    #     cv2.destroyAllWindows()
+    def show_image(self):
+        image = self.get_image()
+        cv2.imshow("Robot View", image)
+        cv2.waitKey(1) 
+        # cv2.destroyAllWindows()
 
 
 if __name__ == '__main__':
     rospy.init_node('control')
     robo = Robot()
     while (not rospy.is_shutdown()):
-        print(robo.orientation)
+        robo.show_image()
         robo.rate.sleep()
