@@ -1,0 +1,149 @@
+{
+    "A": {
+        "A": {
+            "distance": 0,
+            "path": []
+        },
+        "F": {
+            "distance": 10,
+            "path": [
+                "A"
+            ]
+        },
+        "B": {
+            "distance": 14,
+            "path": [
+                "A",
+                "F"
+            ]
+        },
+        "C": {
+            "distance": 22,
+            "path": [
+                "A",
+                "F",
+                "H"
+            ]
+        },
+        "H": {
+            "distance": 17,
+            "path": [
+                "A",
+                "F"
+            ]
+        },
+        "D": {
+            "distance": 20,
+            "path": [
+                "A",
+                "F",
+                "H"
+            ]
+        },
+        "E": {
+            "distance": 16,
+            "path": [
+                "A",
+                "F"
+            ]
+        }
+    },
+    "E": {
+        "A": {
+            "distance": 16,
+            "path": [
+                "E",
+                "F"
+            ]
+        },
+        "F": {
+            "distance": 6,
+            "path": [
+                "E"
+            ]
+        },
+        "B": {
+            "distance": 10,
+            "path": [
+                "E",
+                "F"
+            ]
+        },
+        "C": {
+            "distance": 18,
+            "path": [
+                "E",
+                "F",
+                "H"
+            ]
+        },
+        "H": {
+            "distance": 13,
+            "path": [
+                "E",
+                "F"
+            ]
+        },
+        "D": {
+            "distance": 16,
+            "path": [
+                "E",
+                "F",
+                "H"
+            ]
+        },
+        "E": {
+            "distance": 0,
+            "path": []
+        }
+    },
+    "B": {
+        "A": {
+            "distance": 14,
+            "path": [
+                "B",
+                "F"
+            ]
+        },
+        "F": {
+            "distance": 4,
+            "path": [
+                "B"
+            ]
+        },
+        "B": {
+            "distance": 0,
+            "path": []
+        },
+        "C": {
+            "distance": 16,
+            "path": [
+                "B",
+                "F",
+                "H"
+            ]
+        },
+        "H": {
+            "distance": 11,
+            "path": [
+                "B",
+                "F"
+            ]
+        },
+        "D": {
+            "distance": 14,
+            "path": [
+                "B",
+                "F",
+                "H"
+            ]
+        },
+        "E": {
+            "distance": 10,
+            "path": [
+                "B",
+                "F"
+            ]
+        }
+    }
+}

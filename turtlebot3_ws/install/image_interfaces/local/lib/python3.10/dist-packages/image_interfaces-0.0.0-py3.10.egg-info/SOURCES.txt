@@ -1,0 +1,1 @@
+/home/bctat/turtlebot3ros/turtlebot3_ws/build/image_interfaces/ament_cmake_python/image_interfaces/image_interfaces.egg-info/SOURCES.txt

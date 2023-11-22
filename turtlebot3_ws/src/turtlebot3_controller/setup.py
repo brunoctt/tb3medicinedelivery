@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "test_node = turtlebot3_controller.teste:main"
+            "test_node = turtlebot3_controller.teste:main",
+            "image_node = turtlebot3_controller.turtlebot3_image_processor:main"                
         ],
     },
 )

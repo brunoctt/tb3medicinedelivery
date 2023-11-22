@@ -1,0 +1,112 @@
+{
+    "A": {
+        "F": {
+            "weight": 10,
+            "coordinates": [
+                {
+                    "coordinate": 0
+                }
+            ]
+        }
+    },
+    "F": {
+        "A": {
+            "weight": 10,
+            "coordinates": [
+                {
+                    "coordinate": 2
+                }
+            ]
+        },
+        "B": {
+            "weight": 4,
+            "coordinates": [
+                {
+                    "coordinate": 1
+                }
+            ]
+        },
+        "E": {
+            "weight": 6,
+            "coordinates": [
+                {
+                    "coordinate": 3
+                }
+            ]
+        },
+        "H": {
+            "weight": 7,
+            "coordinates": [
+                {
+                    "coordinate": 0
+                }
+            ]
+        }
+    },
+    "B": {
+        "F": {
+            "weight": 4,
+            "coordinates": [
+                {
+                    "coordinate": 3
+                }
+            ]
+        }
+    },
+    "C": {
+        "H": {
+            "weight": 5,
+            "coordinates": [
+                {
+                    "coordinate": 3
+                }
+            ]
+        }
+    },
+    "H": {
+        "C": {
+            "weight": 5,
+            "coordinates": [
+                {
+                    "coordinate": 1
+                }
+            ]
+        },
+        "D": {
+            "weight": 3,
+            "coordinates": [
+                {
+                    "coordinate": 3
+                }
+            ]
+        },
+        "F": {
+            "weight": 7,
+            "coordinates": [
+                {
+                    "coordinate": 2
+                }
+            ]
+        }
+    },
+    "D": {
+        "H": {
+            "weight": 3,
+            "coordinates": [
+                {
+                    "coordinate": 1
+                }
+            ]
+        }
+    },
+    "E": {
+        "F": {
+            "weight": 6,
+            "coordinates": [
+                {
+                    "coordinate": 1
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "package_name": "image_interfaces",
+  "non_idl_tuples": [
+    "/home/bctat/turtlebot3ros/turtlebot3_ws/src/image_interfaces:msg/Centroid.msg",
+    "/home/bctat/turtlebot3ros/turtlebot3_ws/src/image_interfaces:srv/Movement.srv"
+  ]
+}

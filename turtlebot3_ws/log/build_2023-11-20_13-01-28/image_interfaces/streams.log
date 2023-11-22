@@ -1,0 +1,31 @@
+[0.030s] Invoking command in '/home/bctat/turtlebot3ros/turtlebot3_ws/build/image_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller:/opt/ros/humble /usr/bin/cmake /home/bctat/turtlebot3ros/turtlebot3_ws/src/image_interfaces -DCMAKE_INSTALL_PREFIX=/home/bctat/turtlebot3ros/turtlebot3_ws/install/image_interfaces
+[0.099s] -- The C compiler identification is GNU 11.4.0
+[0.154s] -- The CXX compiler identification is GNU 11.4.0
+[0.159s] -- Detecting C compiler ABI info
+[0.210s] -- Detecting C compiler ABI info - done
+[0.215s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.215s] -- Detecting C compile features
+[0.215s] -- Detecting C compile features - done
+[0.217s] -- Detecting CXX compiler ABI info
+[0.273s] -- Detecting CXX compiler ABI info - done
+[0.278s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.278s] -- Detecting CXX compile features
+[0.278s] -- Detecting CXX compile features - done
+[0.280s] -- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.390s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[0.446s] -- Found ament_lint_auto: 0.12.8 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.499s] -- Added test 'lint_cmake' to check CMake code style
+[0.500s] -- Added test 'xmllint' to check XML markup files
+[0.502s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.504s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.508s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.532s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.552s] [31mCMake Error at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:64 (message):
+[0.552s]   rosidl_generate_interfaces() must be called before ament_package()
+[0.552s] Call Stack (most recent call first):
+[0.552s]   CMakeLists.txt:28 (rosidl_generate_interfaces)
+[0.552s] 
+[0.552s] [0m
+[0.552s] -- Configuring incomplete, errors occurred!
+[0.552s] See also "/home/bctat/turtlebot3ros/turtlebot3_ws/build/image_interfaces/CMakeFiles/CMakeOutput.log".
+[0.555s] Invoked command in '/home/bctat/turtlebot3ros/turtlebot3_ws/build/image_interfaces' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller:/opt/ros/humble /usr/bin/cmake /home/bctat/turtlebot3ros/turtlebot3_ws/src/image_interfaces -DCMAKE_INSTALL_PREFIX=/home/bctat/turtlebot3ros/turtlebot3_ws/install/image_interfaces

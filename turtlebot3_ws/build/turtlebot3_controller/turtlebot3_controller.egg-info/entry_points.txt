@@ -1,3 +1,4 @@
 [console_scripts]
+image_node = turtlebot3_controller.turtlebot3_image_processor:main
 test_node = turtlebot3_controller.teste:main
 
