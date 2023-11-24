@@ -87,7 +87,7 @@ class TurtleBot3Controller:
     MAX_LINEAR_SPEED = 0.5
     MAX_ANGULAR_SPEED = 1.0
     CURVE_DURATION = 2
-    ACTION_DURATION = 0.85
+    ACTION_DURATION = 0.8
     
     def __init__(self, graph, current_node: str = 'A') -> None:
         rclpy.init()
