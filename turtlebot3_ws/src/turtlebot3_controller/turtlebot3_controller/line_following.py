@@ -18,10 +18,10 @@ def calculate_centroid(resolution, image):
         
         # Removing parts without floor
         y_shape = 0
-        while binary[y_shape, :].all():
+        while y_shape < resolution[0] and binary[y_shape, :].all():
             y_shape += 1
         
-        if y_shape == resolution[0]:
+        if y_shape >= resolution[0] - 200:
             return 0, 0, binary
         
         half_bottom_floor = (resolution[0] - y_shape) // 2
@@ -49,7 +49,11 @@ def search_for_intersection(binary):
 
 
 def track_line(resolution, image): 
-    momentum_x, _, binary = calculate_centroid(resolution, image)
+    momentum_x, momentum_y, binary = calculate_centroid(resolution, image)
+    
+    if (momentum_x, momentum_y) == (0, 0):
+        return 0.0, True
+    
     mean_x = max(resolution) / 2
     relative_position = (momentum_x - mean_x) / mean_x
     

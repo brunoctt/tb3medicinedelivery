@@ -87,7 +87,7 @@ class TurtleBot3Controller:
     MAX_LINEAR_SPEED = 0.5
     MAX_ANGULAR_SPEED = 1.0
     CURVE_DURATION = 2
-    ACTION_DURATION = 1
+    ACTION_DURATION = 0.85
     
     def __init__(self, graph, current_node: str = 'A') -> None:
         rclpy.init()
@@ -131,7 +131,6 @@ class TurtleBot3Controller:
         initial_ori = self.orientation
         k = 1
         diff = 0
-        self.log("Begin turn")
         while diff < pi/2 - 0.1:
             self.__move_robot(angular=k * (abs(angle) - diff) * (angle//abs(angle)))
             sleep(0.1)
@@ -168,8 +167,8 @@ class TurtleBot3Controller:
                 angular=-self.MAX_ANGULAR_SPEED*robot_image.relative_centroid
             )
             robot_image = self.__return_response()
-            # sleep(0.1)
-            
+            sleep(0.1)
+
         self.move_past_intersection()
         
     # def move_to_intersection(self):
@@ -199,6 +198,9 @@ class TurtleBot3Controller:
         for turns, node in path:
             self.follow_path(turns)
             self.__current_node = node
+            
+        self.stop()
+        self.log("End of delivery")
 
     def find_path_to_nodes(self, nodes: list[str]) -> list:
         turns = self.__graph.multi_destination_dijkstra(self.__current_node, nodes)
@@ -211,11 +213,11 @@ class TurtleBot3Controller:
         for coordinate in path:
             self.stop()
             turn = coordinate.convert_to_turn(self.__current_direction)
-            self.__current_direction = coordinate
             self.log(str(turn))
 
             self.decision(turn)
             self.follow_line()
+            self.__current_direction = coordinate
 
         self.stop()
 
