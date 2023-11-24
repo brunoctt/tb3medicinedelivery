@@ -3,7 +3,10 @@ from rclpy.node import Node
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 from image_interfaces.srv import Movement
-from turtlebot3_controller.line_following import track_line
+try:
+    from turtlebot3_controller.line_following import track_line
+except ModuleNotFoundError:
+    from line_following import track_line
 
 
 class ImageProcessor(Node):

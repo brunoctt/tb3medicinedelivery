@@ -247,7 +247,7 @@ CMakeFiles/image_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosid
  /home/bctat/turtlebot3ros/turtlebot3_ws/build/image_interfaces/rosidl_generator_c/image_interfaces/msg/rosidl_generator_c__visibility_control.h
  /home/bctat/turtlebot3ros/turtlebot3_ws/build/image_interfaces/rosidl_generator_c/image_interfaces/msg/detail/centroid__struct.h
  /home/bctat/turtlebot3ros/turtlebot3_ws/build/image_interfaces/rosidl_generator_c/image_interfaces/msg/detail/centroid__functions.h
- /home/bctat/turtlebot3ros/turtlebot3_ws/build/image_interfaces/rosidl_generator_c/image_interfaces/srv/detail/find_centroid__type_support.h
- /home/bctat/turtlebot3ros/turtlebot3_ws/build/image_interfaces/rosidl_generator_c/image_interfaces/srv/detail/find_centroid__struct.h
- /home/bctat/turtlebot3ros/turtlebot3_ws/build/image_interfaces/rosidl_generator_c/image_interfaces/srv/detail/find_centroid__functions.h
+ /home/bctat/turtlebot3ros/turtlebot3_ws/build/image_interfaces/rosidl_generator_c/image_interfaces/srv/detail/movement__type_support.h
+ /home/bctat/turtlebot3ros/turtlebot3_ws/build/image_interfaces/rosidl_generator_c/image_interfaces/srv/detail/movement__struct.h
+ /home/bctat/turtlebot3ros/turtlebot3_ws/build/image_interfaces/rosidl_generator_c/image_interfaces/srv/detail/movement__functions.h
 

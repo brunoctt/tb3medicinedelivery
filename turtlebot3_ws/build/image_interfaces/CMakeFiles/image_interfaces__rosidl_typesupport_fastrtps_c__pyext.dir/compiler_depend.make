@@ -246,12 +246,10 @@ CMakeFiles/image_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_gen
   rosidl_generator_c/image_interfaces/msg/rosidl_generator_c__visibility_control.h \
   rosidl_generator_c/image_interfaces/msg/detail/centroid__struct.h \
   rosidl_generator_c/image_interfaces/msg/detail/centroid__functions.h \
-  rosidl_generator_c/image_interfaces/srv/detail/find_centroid__type_support.h \
-  rosidl_generator_c/image_interfaces/srv/detail/find_centroid__struct.h \
-  rosidl_generator_c/image_interfaces/srv/detail/find_centroid__functions.h
+  rosidl_generator_c/image_interfaces/srv/detail/movement__type_support.h \
+  rosidl_generator_c/image_interfaces/srv/detail/movement__struct.h \
+  rosidl_generator_c/image_interfaces/srv/detail/movement__functions.h
 
-
-rosidl_generator_c/image_interfaces/srv/detail/find_centroid__struct.h:
 
 rosidl_generator_c/image_interfaces/msg/detail/centroid__functions.h:
 
@@ -318,6 +316,8 @@ rosidl_generator_c/image_interfaces/msg/detail/centroid__type_support.h:
 /usr/include/python3.10/pyframe.h:
 
 /usr/include/python3.10/cpython/code.h:
+
+rosidl_generator_c/image_interfaces/srv/detail/movement__struct.h:
 
 /usr/include/python3.10/code.h:
 
@@ -481,13 +481,9 @@ rosidl_generator_c/image_interfaces/msg/rosidl_generator_c__visibility_control.h
 
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
-rosidl_generator_c/image_interfaces/srv/detail/find_centroid__functions.h:
-
 /usr/include/asm-generic/posix_types.h:
 
 /usr/include/stdc-predef.h:
-
-rosidl_generator_c/image_interfaces/srv/detail/find_centroid__type_support.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
@@ -544,6 +540,8 @@ rosidl_generator_py/image_interfaces/_image_interfaces_s.ep.rosidl_typesupport_f
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+rosidl_generator_c/image_interfaces/srv/detail/movement__type_support.h:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
@@ -726,6 +724,8 @@ rosidl_generator_py/image_interfaces/_image_interfaces_s.ep.rosidl_typesupport_f
 /usr/include/x86_64-linux-gnu/bits/statx.h:
 
 /usr/include/x86_64-linux-gnu/asm/types.h:
+
+rosidl_generator_c/image_interfaces/srv/detail/movement__functions.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 

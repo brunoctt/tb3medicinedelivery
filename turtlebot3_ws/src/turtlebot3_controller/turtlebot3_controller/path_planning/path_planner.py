@@ -56,8 +56,14 @@ class Graph:
         """
         self.__all_distances.update({source: distances})
         
-        with open(self.__stored_distances_path, "w+") as f:
-            json.dump(self.__all_distances, f, indent=4)
+        try:
+            with open(self.__stored_distances_path, "w+") as f:
+                json.dump(self.__all_distances, f, indent=4)
+        except FileNotFoundError:
+            debug_path = os.path.join(os.getcwd(), "turtlebot3_ws", "src", "turtlebot3_controller", "turtlebot3_controller", "path_planning", "stored_distances.json")
+            with open(debug_path, "w+") as f:
+                json.dump(self.__all_distances, f, indent=4)
+        
 
     def save_graph(self):
         """

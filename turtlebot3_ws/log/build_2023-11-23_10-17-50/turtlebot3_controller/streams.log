@@ -1,0 +1,18 @@
+[0.466s] Invoking command in '/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller': CMAKE_PREFIX_PATH=/home/bctat/turtlebot3ros/turtlebot3_ws/install/image_interfaces:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_simulations:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_fake_node PYTHONPATH=/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/prefix_override:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/build --no-deps install_data
+[0.606s] running develop
+[0.685s] running egg_info
+[0.685s] writing turtlebot3_controller.egg-info/PKG-INFO
+[0.685s] writing dependency_links to turtlebot3_controller.egg-info/dependency_links.txt
+[0.685s] writing entry points to turtlebot3_controller.egg-info/entry_points.txt
+[0.685s] writing requirements to turtlebot3_controller.egg-info/requires.txt
+[0.686s] writing top-level names to turtlebot3_controller.egg-info/top_level.txt
+[0.687s] reading manifest file 'turtlebot3_controller.egg-info/SOURCES.txt'
+[0.687s] writing manifest file 'turtlebot3_controller.egg-info/SOURCES.txt'
+[0.688s] running build_ext
+[0.688s] Creating /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/python3.10/site-packages/turtlebot3-controller.egg-link (link to .)
+[0.688s] Installing image_node script to /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/turtlebot3_controller
+[0.688s] Installing main_node script to /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/turtlebot3_controller
+[0.689s] 
+[0.689s] Installed /home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller
+[0.689s] running install_data
+[0.706s] Invoked command in '/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller' returned '0': CMAKE_PREFIX_PATH=/home/bctat/turtlebot3ros/turtlebot3_ws/install/image_interfaces:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_simulations:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_fake_node PYTHONPATH=/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/prefix_override:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/build --no-deps install_data

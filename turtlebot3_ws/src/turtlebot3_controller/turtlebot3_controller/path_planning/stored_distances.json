@@ -48,55 +48,6 @@
             ]
         }
     },
-    "E": {
-        "A": {
-            "distance": 16,
-            "path": [
-                "E",
-                "F"
-            ]
-        },
-        "F": {
-            "distance": 6,
-            "path": [
-                "E"
-            ]
-        },
-        "B": {
-            "distance": 10,
-            "path": [
-                "E",
-                "F"
-            ]
-        },
-        "C": {
-            "distance": 18,
-            "path": [
-                "E",
-                "F",
-                "H"
-            ]
-        },
-        "H": {
-            "distance": 13,
-            "path": [
-                "E",
-                "F"
-            ]
-        },
-        "D": {
-            "distance": 16,
-            "path": [
-                "E",
-                "F",
-                "H"
-            ]
-        },
-        "E": {
-            "distance": 0,
-            "path": []
-        }
-    },
     "B": {
         "A": {
             "distance": 14,

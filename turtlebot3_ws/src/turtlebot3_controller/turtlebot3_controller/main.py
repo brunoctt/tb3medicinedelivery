@@ -15,12 +15,11 @@ def main(args=None):
     graph.load_graph()
     
     control = TurtleBot3Controller(graph)
-    # rate = control.node.create_rate(1)
     
-    
-    control.return_response()
+    control.move_to_nodes(['D', 'B'])
     
     rclpy.spin(control.node)
+    
     # while rclpy.ok():
     #     img = control.node.get_image()
     
