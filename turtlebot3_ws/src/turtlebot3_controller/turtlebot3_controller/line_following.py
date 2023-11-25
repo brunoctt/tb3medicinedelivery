@@ -14,7 +14,7 @@ def calculate_centroid(resolution, image):
         """
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         blur = cv2.GaussianBlur(gray, (5, 5), 0)
-        _, binary = cv2.threshold(blur, 127, 255, cv2.THRESH_BINARY)
+        _, binary = cv2.threshold(blur, 20, 255, cv2.THRESH_BINARY)
         
         # Removing parts without floor
         y_shape = 0

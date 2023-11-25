@@ -5,6 +5,7 @@ from time import sleep
 from rclpy.node import Node
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Twist
+from sensor_msgs.msg import LaserScan
 from image_interfaces.srv import Movement
 from math import atan2, asin, pi
 try:
@@ -81,19 +82,39 @@ class _TB3Client(Node):
         # future.add_done_callback(self.response_callback)
         return future
         
+       
+class _TB3LaserSub(Node):
+    def __init__(self):
+        super().__init__("tb3_laser_subscriber")
+        
+        self.get_logger().info("TB3 Laser Subscriber started")
+        self.__laser_sub = self.create_subscription(LaserScan, '/scan', self.__laser_callback, 10)
+        self.distance_at_front = None
+        
+    def __laser_callback(self, msg: LaserScan):
+        laser_range = 15
+        laser_slice = msg.ranges[-laser_range:] + msg.ranges[:laser_range+1]
+        laser_slice = [x for x in laser_slice if x != float('inf')]
+        if laser_slice:
+            self.distance_at_front = sum(laser_slice) / len(laser_slice)
+        else:
+            self.distance_at_front = float('inf')
+
         
 class TurtleBot3Controller:
     
     MAX_LINEAR_SPEED = 0.5
     MAX_ANGULAR_SPEED = 1.0
+    MAX_DISTANCE = 0.7
     CURVE_DURATION = 2
     ACTION_DURATION = 0.8
     
     def __init__(self, graph, current_node: str = 'A') -> None:
         rclpy.init()
         self.__robot = _TB3Controller()
-        self.__image_client = _TB3Client()
         self.__odometry = _TB3OdomSubs()
+        self.__laser = _TB3LaserSub()
+        self.__image_client = _TB3Client()
         self.__graph = graph
         self.__current_node = current_node
         self.__current_direction = Coordinate(0)
@@ -103,9 +124,20 @@ class TurtleBot3Controller:
         return self.__robot
     
     @property
+    def nodes(self):
+        return [self.__robot, self.__odometry, self.__laser]
+    
+    @property
     def orientation(self):
-        rclpy.spin_once(self.__odometry)
-        return self.__odometry.orientation
+        # rclpy.spin_once(self.__odometry)
+        return self.__odometry.orientation  
+
+    @property
+    def distance(self):
+        # rclpy.spin_once(self.__laser)
+        # for _ in range(5):
+        #     dist = 
+        return self.__laser.distance_at_front
     
     def log(self, msg: str):
         self.__robot.get_logger().info(msg)
@@ -122,29 +154,22 @@ class TurtleBot3Controller:
     def stop(self):
         self.__move_robot()
         
-    def move_straight(self):
-        self.__move_robot(self.MAX_LINEAR_SPEED)
-        
     def turn(self, angle):    
-        while self.orientation is None:
-            pass    
+        # while self.orientation is None:
+        #     pass    
         initial_ori = self.orientation
         k = 1
         diff = 0
-        while diff < pi/2 - 0.1:
+        while diff < pi/2 - 0.05:
             self.__move_robot(angular=k * (abs(angle) - diff) * (angle//abs(angle)))
             sleep(0.1)
             diff = min(abs(self.orientation - initial_ori), (self.orientation - initial_ori)%pi)
         self.stop()
         
     def turn_right(self):
-        # self.__move_robot(angular=-self.MAX_ANGULAR_SPEED)
-        # sleep(self.CURVE_DURATION)
         self.turn(-pi/2)
 
     def turn_left(self):
-        # self.__move_robot(angular=self.MAX_ANGULAR_SPEED)
-        # sleep(self.CURVE_DURATION)
         self.turn(pi/2)
         
     def turn_back(self):
@@ -161,22 +186,26 @@ class TurtleBot3Controller:
         Calculates robot motors speeds based on input image, so it keeps following line until finds intersection
         """
         robot_image = self.__return_response()
-        while not robot_image.intersection:
+        distance = self.distance
+        while not (robot_image.intersection and distance > self.MAX_DISTANCE):
+            linear_speed = min(self.MAX_LINEAR_SPEED, 2 * (distance - self.MAX_DISTANCE))
+            angular_speed = -self.MAX_ANGULAR_SPEED * robot_image.relative_centroid
+            
+            if linear_speed <= 0:
+                self.stop()
+                linear_speed = angular_speed = 0.0
+                self.__robot.get_logger().warning("Object in front of robot")
+            
             self.__move_robot(
-                linear=self.MAX_LINEAR_SPEED, 
-                angular=-self.MAX_ANGULAR_SPEED*robot_image.relative_centroid
+                linear=linear_speed,
+                angular=angular_speed
             )
+            distance = self.distance
             robot_image = self.__return_response()
             sleep(0.1)
 
+        self.stop()
         self.move_past_intersection()
-        
-    # def move_to_intersection(self):
-    #     original_position = self.get_robot_position()
-    #     self.set_motors_speed(self.__max_speed * 0.8, self.__max_speed * 0.8)
-    #     while abs(sum(original_position - self.get_robot_position())) < 0.15:
-    #         pass
-    #     self.set_motors_speed(0, 0)
         
     def decision(self, turn):
         if turn == Turn.STRAIGHT:
