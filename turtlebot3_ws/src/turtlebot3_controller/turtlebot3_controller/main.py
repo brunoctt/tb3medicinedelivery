@@ -21,12 +21,11 @@ def main(args=None):
     for node in control.nodes:
         executor.add_node(node)
     
-    
     executor_thread = threading.Thread(target=executor.spin, daemon=True)
     executor_thread.start()
     
     control.move_to_nodes(['C', 'B'])
-    # rclpy.spin(control.node)
+
     rclpy.shutdown()
 
 

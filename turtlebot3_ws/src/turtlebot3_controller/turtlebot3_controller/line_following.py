@@ -59,6 +59,9 @@ def track_line(resolution, image):
     
     found_intersection = search_for_intersection(binary)
     
-    return relative_position, found_intersection
+    # Slight bias because camera is not centered in robot
+    bias = 0.15
+    
+    return relative_position + bias, found_intersection
 
 

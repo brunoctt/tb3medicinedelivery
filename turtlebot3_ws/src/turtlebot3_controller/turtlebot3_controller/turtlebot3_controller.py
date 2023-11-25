@@ -4,10 +4,10 @@ import rclpy
 from time import sleep
 from rclpy.node import Node
 from nav_msgs.msg import Odometry
-from geometry_msgs.msg import Twist
 from sensor_msgs.msg import LaserScan
 from image_interfaces.srv import Movement
-from math import atan2, asin, pi
+from geometry_msgs.msg import Twist, Point
+from math import atan2, asin, pi, sqrt
 try:
     from turtlebot3_controller.utils import Coordinate, Turn
 except ModuleNotFoundError:
@@ -32,9 +32,11 @@ class _TB3OdomSubs(Node):
         self.get_logger().info("TB3 Odometry Subscriber started")
         self.__odom_sub = self.create_subscription(Odometry, '/odom', self.__odometry_callback, 10)
         self.orientation = None
+        self.position = None
         
     def __odometry_callback(self, msg: Odometry):
         ori = msg.pose.pose.orientation
+        self.position = msg.pose.pose.position
         self.orientation = round(self.__euler_from_quaternion(ori.x, ori.y, ori.z, ori.w)[-1], 2)
         
     @staticmethod
@@ -60,7 +62,10 @@ class _TB3OdomSubs(Node):
         yaw_z = atan2(t3, t4)
     
         return roll_x, pitch_y, yaw_z # in radians
-     
+    
+    @staticmethod
+    def euclidian_distance_2d(point1: Point, point2: Point):
+        return sqrt((point2.x - point1.x)**2 + (point2.y - point1.y)**2)
         
 class _TB3Client(Node):
     def __init__(self):
@@ -103,8 +108,8 @@ class _TB3LaserSub(Node):
         
 class TurtleBot3Controller:
     
-    MAX_LINEAR_SPEED = 0.5
-    MAX_ANGULAR_SPEED = 1.0
+    MAX_LINEAR_SPEED = 0.6
+    MAX_ANGULAR_SPEED = 1.2
     MAX_DISTANCE = 0.7
     CURVE_DURATION = 2
     ACTION_DURATION = 0.8
@@ -129,14 +134,14 @@ class TurtleBot3Controller:
     
     @property
     def orientation(self):
-        # rclpy.spin_once(self.__odometry)
         return self.__odometry.orientation  
+    
+    @property
+    def position(self):
+        return self.__odometry.position
 
     @property
     def distance(self):
-        # rclpy.spin_once(self.__laser)
-        # for _ in range(5):
-        #     dist = 
         return self.__laser.distance_at_front
     
     def log(self, msg: str):
@@ -155,12 +160,10 @@ class TurtleBot3Controller:
         self.__move_robot()
         
     def turn(self, angle):    
-        # while self.orientation is None:
-        #     pass    
         initial_ori = self.orientation
-        k = 1
+        k = 2
         diff = 0
-        while diff < pi/2 - 0.05:
+        while diff < pi/2 - 0.025:
             self.__move_robot(angular=k * (abs(angle) - diff) * (angle//abs(angle)))
             sleep(0.1)
             diff = min(abs(self.orientation - initial_ori), (self.orientation - initial_ori)%pi)
@@ -168,7 +171,7 @@ class TurtleBot3Controller:
         
     def turn_right(self):
         self.turn(-pi/2)
-
+        
     def turn_left(self):
         self.turn(pi/2)
         
@@ -177,14 +180,23 @@ class TurtleBot3Controller:
         self.turn_left()
         
     def move_past_intersection(self):
-        self.__move_robot(self.MAX_LINEAR_SPEED)
-        sleep(self.ACTION_DURATION)
+        while (initial_position := self.position) is None:
+            pass
+        
+        distance_function = self.__odometry.euclidian_distance_2d
+        distance_to_move = 0.45
+        
+        while (diff := distance_function(self.position, initial_position)) < distance_to_move - 0.05:
+            speed = 3 * (distance_to_move - diff) / distance_to_move
+            speed = min(self.MAX_LINEAR_SPEED, max(0.0, speed))
+            self.__move_robot(speed)
         self.stop()
         
     def follow_line(self):
         """
         Calculates robot motors speeds based on input image, so it keeps following line until finds intersection
         """
+        self.stop()
         robot_image = self.__return_response()
         distance = self.distance
         while not (robot_image.intersection and distance > self.MAX_DISTANCE):
@@ -210,12 +222,14 @@ class TurtleBot3Controller:
     def decision(self, turn):
         if turn == Turn.STRAIGHT:
             self.move_past_intersection()
+            return
         elif turn == Turn.RIGHT:
             self.turn_right()
         elif turn == Turn.LEFT:
             self.turn_left()
         elif turn == Turn.BACK:
             self.turn_back()
+        sleep(0.1)
     
     def move_to_nodes(self, nodes: list[str]):
         """
