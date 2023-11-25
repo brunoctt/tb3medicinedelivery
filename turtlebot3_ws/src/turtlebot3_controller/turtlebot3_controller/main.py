@@ -24,7 +24,7 @@ def main(args=None):
     executor_thread = threading.Thread(target=executor.spin, daemon=True)
     executor_thread.start()
     
-    control.move_to_nodes(['C', 'B'])
+    control.move_to_nodes(['C', 'B', 'E'])
 
     rclpy.shutdown()
 

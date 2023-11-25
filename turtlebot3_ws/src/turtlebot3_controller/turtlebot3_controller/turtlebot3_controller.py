@@ -66,6 +66,7 @@ class _TB3OdomSubs(Node):
     @staticmethod
     def euclidian_distance_2d(point1: Point, point2: Point):
         return sqrt((point2.x - point1.x)**2 + (point2.y - point1.y)**2)
+
         
 class _TB3Client(Node):
     def __init__(self):
@@ -110,9 +111,7 @@ class TurtleBot3Controller:
     
     MAX_LINEAR_SPEED = 0.6
     MAX_ANGULAR_SPEED = 1.2
-    MAX_DISTANCE = 0.7
-    CURVE_DURATION = 2
-    ACTION_DURATION = 0.8
+    MAX_DISTANCE = 0.75
     
     def __init__(self, graph, current_node: str = 'A') -> None:
         rclpy.init()
@@ -124,10 +123,6 @@ class TurtleBot3Controller:
         self.__current_node = current_node
         self.__current_direction = Coordinate(0)
        
-    @property
-    def node(self):
-        return self.__robot
-    
     @property
     def nodes(self):
         return [self.__robot, self.__odometry, self.__laser]
@@ -144,7 +139,7 @@ class TurtleBot3Controller:
     def distance(self):
         return self.__laser.distance_at_front
     
-    def log(self, msg: str):
+    def __log(self, msg: str):
         self.__robot.get_logger().info(msg)
         
     def __move_robot(self, linear=0.0, angular=0.0):
@@ -153,7 +148,7 @@ class TurtleBot3Controller:
         cmd.angular.z = angular
         self.__robot.send_vel_cmd(cmd)
         
-    def request_image(self):
+    def __request_image(self):
         return self.__image_client.request_image()
         
     def stop(self):
@@ -179,12 +174,11 @@ class TurtleBot3Controller:
         self.turn_left()
         self.turn_left()
         
-    def move_past_intersection(self):
+    def move_past_intersection(self, distance_to_move: float = 0.4):
         while (initial_position := self.position) is None:
             pass
         
         distance_function = self.__odometry.euclidian_distance_2d
-        distance_to_move = 0.45
         
         while (diff := distance_function(self.position, initial_position)) < distance_to_move - 0.05:
             speed = 3 * (distance_to_move - diff) / distance_to_move
@@ -212,14 +206,14 @@ class TurtleBot3Controller:
                 linear=linear_speed,
                 angular=angular_speed
             )
+            sleep(0.1)
             distance = self.distance
             robot_image = self.__return_response()
-            sleep(0.1)
 
         self.stop()
         self.move_past_intersection()
         
-    def decision(self, turn):
+    def __decision(self, turn):
         if turn == Turn.STRAIGHT:
             self.move_past_intersection()
             return
@@ -239,35 +233,35 @@ class TurtleBot3Controller:
         """
         path = self.find_path_to_nodes(nodes)
         for turns, node in path:
-            self.follow_path(turns)
+            self.__follow_path(turns)
             self.__current_node = node
             
         self.stop()
-        self.log("End of delivery")
+        self.__log("End of delivery")
 
     def find_path_to_nodes(self, nodes: list[str]) -> list:
         turns = self.__graph.multi_destination_dijkstra(self.__current_node, nodes)
         return turns
     
-    def follow_path(self, path):
+    def __follow_path(self, path):
         """
         Makes robot follow line, main method
         """
         for coordinate in path:
             self.stop()
             turn = coordinate.convert_to_turn(self.__current_direction)
-            self.log(str(turn))
+            self.__log(str(turn))
 
-            self.decision(turn)
+            self.__decision(turn)
             self.follow_line()
             self.__current_direction = coordinate
 
         self.stop()
 
     def __return_response(self) -> Movement.Response:
-        res = self.request_image()
+        res = self.__request_image()
         rclpy.spin_until_future_complete(self.__image_client, res)
         try:
             return res.result()
         except Exception as e:
-            self.log(str(e))
+            self.__log(str(e))
