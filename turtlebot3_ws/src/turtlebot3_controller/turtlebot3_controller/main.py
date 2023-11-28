@@ -27,6 +27,18 @@ def main(args=None):
     control.move_to_nodes(['C', 'B', 'E'])
 
     rclpy.shutdown()
+    
+    
+def add_graph():
+    graph = Graph() 
+    graph.add_edge("A", "G", 3, "N")
+    graph.add_edge("G", "B", 2, "E")
+    graph.add_edge("G", "F", 4, "W")
+    graph.add_edge("G", "H", 2, "N")
+    graph.add_edge("H", "E", 2, "W")
+    graph.add_edge("H", "D", 1, "N")
+    graph.add_edge("H", "C", 7, "ES")
+    graph.save_graph()
 
 
 if __name__ == "__main__":

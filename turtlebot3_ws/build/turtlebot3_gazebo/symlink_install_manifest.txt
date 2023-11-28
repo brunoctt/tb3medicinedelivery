@@ -60,6 +60,7 @@
 /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_waffle.urdf
 /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_waffle_pi.urdf
 /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/empty_world.world
+/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/hospital_word
 /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/test_world.world
 /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage1.world
 /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage2.world

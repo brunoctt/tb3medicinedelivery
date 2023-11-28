@@ -75,8 +75,13 @@ class Graph:
             except AttributeError:
                 raise AttributeError(f"Object {obj} is not JSON serializable")
         
-        with open(self.__stored_graph_path, "w+") as f:
-            json.dump(self.__edges, f, indent=4, default=non_serializable_object_encoder)
+        try:
+            with open(self.__stored_graph_path, "w+") as f:
+                json.dump(self.__edges, f, indent=4, default=non_serializable_object_encoder)
+        except FileNotFoundError:
+            debug_path = os.path.join(os.getcwd(), "turtlebot3_ws", "src", "turtlebot3_controller", "turtlebot3_controller", "path_planning", "stored_graph.json")
+            with open(debug_path, "w+") as f:
+                json.dump(self.__edges, f, indent=4, default=non_serializable_object_encoder)
             
     def load_graph(self):
         """
