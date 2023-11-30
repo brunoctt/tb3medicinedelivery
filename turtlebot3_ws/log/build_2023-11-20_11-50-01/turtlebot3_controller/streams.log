@@ -1,0 +1,17 @@
+[0.499s] Invoking command in '/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller': PYTHONPATH=/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/prefix_override:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/build --no-deps install_data
+[0.664s] running develop
+[0.749s] running egg_info
+[0.749s] writing turtlebot3_controller.egg-info/PKG-INFO
+[0.749s] writing dependency_links to turtlebot3_controller.egg-info/dependency_links.txt
+[0.749s] writing entry points to turtlebot3_controller.egg-info/entry_points.txt
+[0.749s] writing requirements to turtlebot3_controller.egg-info/requires.txt
+[0.749s] writing top-level names to turtlebot3_controller.egg-info/top_level.txt
+[0.750s] reading manifest file 'turtlebot3_controller.egg-info/SOURCES.txt'
+[0.751s] writing manifest file 'turtlebot3_controller.egg-info/SOURCES.txt'
+[0.752s] running build_ext
+[0.752s] Creating /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/python3.10/site-packages/turtlebot3-controller.egg-link (link to .)
+[0.752s] Installing test_node script to /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/turtlebot3_controller
+[0.752s] 
+[0.752s] Installed /home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller
+[0.752s] running install_data
+[0.770s] Invoked command in '/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller' returned '0': PYTHONPATH=/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/prefix_override:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/build --no-deps install_data

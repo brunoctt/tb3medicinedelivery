@@ -1,2 +1,2 @@
-# TurtleBot3 control with ROS
+# TurtleBot3 control with ROS2
 

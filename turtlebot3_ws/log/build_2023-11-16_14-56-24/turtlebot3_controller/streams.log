@@ -1,0 +1,20 @@
+[0.535s] Invoking command in '/home/bctat/turtlebot3ros/turtlebot3_ws/src/turtlebot3_controller': PYTHONPATH=/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/prefix_override:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/turtlebot3_controller build --build-base /home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/build install --record /home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/install.log --single-version-externally-managed
+[0.702s] running egg_info
+[0.702s] writing ../../build/turtlebot3_controller/turtlebot3_controller.egg-info/PKG-INFO
+[0.702s] writing dependency_links to ../../build/turtlebot3_controller/turtlebot3_controller.egg-info/dependency_links.txt
+[0.702s] writing entry points to ../../build/turtlebot3_controller/turtlebot3_controller.egg-info/entry_points.txt
+[0.702s] writing requirements to ../../build/turtlebot3_controller/turtlebot3_controller.egg-info/requires.txt
+[0.702s] writing top-level names to ../../build/turtlebot3_controller/turtlebot3_controller.egg-info/top_level.txt
+[0.703s] reading manifest file '../../build/turtlebot3_controller/turtlebot3_controller.egg-info/SOURCES.txt'
+[0.704s] writing manifest file '../../build/turtlebot3_controller/turtlebot3_controller.egg-info/SOURCES.txt'
+[0.704s] running build
+[0.704s] running build_py
+[0.704s] running install
+[0.704s] running install_lib
+[0.705s] running install_data
+[0.705s] running install_egg_info
+[0.706s] removing '/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/python3.10/site-packages/turtlebot3_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[0.706s] Copying ../../build/turtlebot3_controller/turtlebot3_controller.egg-info to /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/python3.10/site-packages/turtlebot3_controller-0.0.0-py3.10.egg-info
+[0.707s] running install_scripts
+[0.718s] writing list of installed files to '/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/install.log'
+[0.735s] Invoked command in '/home/bctat/turtlebot3ros/turtlebot3_ws/src/turtlebot3_controller' returned '0': PYTHONPATH=/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/prefix_override:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/turtlebot3_controller build --build-base /home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/build install --record /home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/install.log --single-version-externally-managed

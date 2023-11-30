@@ -1,0 +1,173 @@
+{
+    "A": {
+        "A": {
+            "distance": 0,
+            "path": []
+        },
+        "G": {
+            "distance": 3,
+            "path": [
+                "A"
+            ]
+        },
+        "B": {
+            "distance": 5,
+            "path": [
+                "A",
+                "G"
+            ]
+        },
+        "F": {
+            "distance": 7,
+            "path": [
+                "A",
+                "G"
+            ]
+        },
+        "H": {
+            "distance": 5,
+            "path": [
+                "A",
+                "G"
+            ]
+        },
+        "E": {
+            "distance": 7,
+            "path": [
+                "A",
+                "G",
+                "H"
+            ]
+        },
+        "D": {
+            "distance": 6,
+            "path": [
+                "A",
+                "G",
+                "H"
+            ]
+        },
+        "C": {
+            "distance": 12,
+            "path": [
+                "A",
+                "G",
+                "H"
+            ]
+        }
+    },
+    "B": {
+        "A": {
+            "distance": 5,
+            "path": [
+                "B",
+                "G"
+            ]
+        },
+        "G": {
+            "distance": 2,
+            "path": [
+                "B"
+            ]
+        },
+        "B": {
+            "distance": 0,
+            "path": []
+        },
+        "F": {
+            "distance": 6,
+            "path": [
+                "B",
+                "G"
+            ]
+        },
+        "H": {
+            "distance": 4,
+            "path": [
+                "B",
+                "G"
+            ]
+        },
+        "E": {
+            "distance": 6,
+            "path": [
+                "B",
+                "G",
+                "H"
+            ]
+        },
+        "D": {
+            "distance": 5,
+            "path": [
+                "B",
+                "G",
+                "H"
+            ]
+        },
+        "C": {
+            "distance": 11,
+            "path": [
+                "B",
+                "G",
+                "H"
+            ]
+        }
+    },
+    "E": {
+        "A": {
+            "distance": 7,
+            "path": [
+                "E",
+                "H",
+                "G"
+            ]
+        },
+        "G": {
+            "distance": 4,
+            "path": [
+                "E",
+                "H"
+            ]
+        },
+        "B": {
+            "distance": 6,
+            "path": [
+                "E",
+                "H",
+                "G"
+            ]
+        },
+        "F": {
+            "distance": 8,
+            "path": [
+                "E",
+                "H",
+                "G"
+            ]
+        },
+        "H": {
+            "distance": 2,
+            "path": [
+                "E"
+            ]
+        },
+        "E": {
+            "distance": 0,
+            "path": []
+        },
+        "D": {
+            "distance": 3,
+            "path": [
+                "E",
+                "H"
+            ]
+        },
+        "C": {
+            "distance": 9,
+            "path": [
+                "E",
+                "H"
+            ]
+        }
+    }
+}

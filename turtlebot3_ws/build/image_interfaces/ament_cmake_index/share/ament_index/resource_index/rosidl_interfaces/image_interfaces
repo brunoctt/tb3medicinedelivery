@@ -1,0 +1,6 @@
+msg/Centroid.idl
+msg/Centroid.msg
+srv/Movement.idl
+srv/Movement.srv
+srv/Movement_Request.msg
+srv/Movement_Response.msg

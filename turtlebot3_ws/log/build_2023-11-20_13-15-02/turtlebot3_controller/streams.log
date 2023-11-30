@@ -1,0 +1,24 @@
+[0.482s] Invoking command in '/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller': PYTHONPATH=/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/prefix_override:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/build --no-deps install_data
+[0.645s] running develop
+[0.734s] running egg_info
+[0.734s] creating turtlebot3_controller.egg-info
+[0.735s] writing turtlebot3_controller.egg-info/PKG-INFO
+[0.735s] writing dependency_links to turtlebot3_controller.egg-info/dependency_links.txt
+[0.735s] writing entry points to turtlebot3_controller.egg-info/entry_points.txt
+[0.735s] writing requirements to turtlebot3_controller.egg-info/requires.txt
+[0.735s] writing top-level names to turtlebot3_controller.egg-info/top_level.txt
+[0.735s] writing manifest file 'turtlebot3_controller.egg-info/SOURCES.txt'
+[0.736s] reading manifest file 'turtlebot3_controller.egg-info/SOURCES.txt'
+[0.736s] writing manifest file 'turtlebot3_controller.egg-info/SOURCES.txt'
+[0.737s] running build_ext
+[0.738s] Creating /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/python3.10/site-packages/turtlebot3-controller.egg-link (link to .)
+[0.738s] Installing test_node script to /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/turtlebot3_controller
+[0.738s] 
+[0.738s] Installed /home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller
+[0.738s] running install_data
+[0.738s] creating /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/share/ament_index
+[0.738s] creating /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/share/ament_index/resource_index
+[0.739s] creating /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/share/ament_index/resource_index/packages
+[0.739s] copying resource/turtlebot3_controller -> /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/share/ament_index/resource_index/packages
+[0.739s] copying package.xml -> /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/share/turtlebot3_controller
+[0.762s] Invoked command in '/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller' returned '0': PYTHONPATH=/home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/prefix_override:/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/bctat/turtlebot3ros/turtlebot3_ws/build/turtlebot3_controller/build --no-deps install_data
