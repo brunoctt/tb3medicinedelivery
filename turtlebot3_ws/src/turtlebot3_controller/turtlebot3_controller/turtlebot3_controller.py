@@ -113,7 +113,7 @@ class TurtleBot3Controller:
     MAX_ANGULAR_SPEED = 1.2
     MAX_DISTANCE = 0.75
     
-    def __init__(self, graph, current_node: str = 'A') -> None:
+    def __init__(self, graph, current_node: str = 'A', direction: int = 0) -> None:
         rclpy.init()
         self.__robot = _TB3Controller()
         self.__odometry = _TB3OdomSubs()
@@ -121,7 +121,7 @@ class TurtleBot3Controller:
         self.__image_client = _TB3Client()
         self.__graph = graph
         self.__current_node = current_node
-        self.__current_direction = Coordinate(0)
+        self.__current_direction = Coordinate(direction)
        
     @property
     def nodes(self):
@@ -156,10 +156,12 @@ class TurtleBot3Controller:
         
     def turn(self, angle):    
         initial_ori = self.orientation
-        k = 2
+        k = 1.5   
         diff = 0
         while diff < pi/2 - 0.025:
-            self.__move_robot(angular=k * (abs(angle) - diff) * (angle//abs(angle)))
+            speed = k * (abs(angle) - diff) * (angle//abs(angle))
+            speed = min(self.MAX_ANGULAR_SPEED, speed)
+            self.__move_robot(angular=speed)
             sleep(0.1)
             diff = min(abs(self.orientation - initial_ori), (self.orientation - initial_ori)%pi)
         self.stop()
@@ -174,14 +176,14 @@ class TurtleBot3Controller:
         self.turn_left()
         self.turn_left()
         
-    def move_past_intersection(self, distance_to_move: float = 0.4):
+    def move_past_intersection(self, distance_to_move: float = 0.46):
         while (initial_position := self.position) is None:
             pass
         
         distance_function = self.__odometry.euclidian_distance_2d
         
         while (diff := distance_function(self.position, initial_position)) < distance_to_move - 0.05:
-            speed = 3 * (distance_to_move - diff) / distance_to_move
+            speed = 2 * (distance_to_move - diff) / distance_to_move
             speed = min(self.MAX_LINEAR_SPEED, max(0.0, speed))
             self.__move_robot(speed)
         self.stop()
@@ -235,10 +237,10 @@ class TurtleBot3Controller:
         for turns, node in path:
             self.__follow_path(turns)
             self.__current_node = node
-            
+
         self.stop()
         self.__log("End of delivery")
-
+    
     def find_path_to_nodes(self, nodes: list[str]) -> list:
         turns = self.__graph.multi_destination_dijkstra(self.__current_node, nodes)
         return turns
