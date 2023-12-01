@@ -169,5 +169,62 @@
                 "H"
             ]
         }
+    },
+    "D": {
+        "A": {
+            "distance": 6,
+            "path": [
+                "D",
+                "H",
+                "G"
+            ]
+        },
+        "G": {
+            "distance": 3,
+            "path": [
+                "D",
+                "H"
+            ]
+        },
+        "B": {
+            "distance": 5,
+            "path": [
+                "D",
+                "H",
+                "G"
+            ]
+        },
+        "F": {
+            "distance": 7,
+            "path": [
+                "D",
+                "H",
+                "G"
+            ]
+        },
+        "H": {
+            "distance": 1,
+            "path": [
+                "D"
+            ]
+        },
+        "E": {
+            "distance": 3,
+            "path": [
+                "D",
+                "H"
+            ]
+        },
+        "D": {
+            "distance": 0,
+            "path": []
+        },
+        "C": {
+            "distance": 8,
+            "path": [
+                "D",
+                "H"
+            ]
+        }
     }
 }
