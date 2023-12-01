@@ -1,6 +1,68 @@
 {
     "A": {
+        "I": {
+            "weight": 4,
+            "coordinates": [
+                {
+                    "coordinate": 3
+                }
+            ]
+        }
+    },
+    "I": {
+        "A": {
+            "weight": 4,
+            "coordinates": [
+                {
+                    "coordinate": 1
+                }
+            ]
+        },
+        "H": {
+            "weight": 4,
+            "coordinates": [
+                {
+                    "coordinate": 3
+                }
+            ]
+        },
+        "J": {
+            "weight": 3,
+            "coordinates": [
+                {
+                    "coordinate": 0
+                }
+            ]
+        }
+    },
+    "H": {
+        "I": {
+            "weight": 4,
+            "coordinates": [
+                {
+                    "coordinate": 1
+                }
+            ]
+        }
+    },
+    "J": {
+        "I": {
+            "weight": 3,
+            "coordinates": [
+                {
+                    "coordinate": 2
+                }
+            ]
+        },
         "G": {
+            "weight": 4,
+            "coordinates": [
+                {
+                    "coordinate": 3
+                }
+            ]
+        },
+        "L": {
             "weight": 3,
             "coordinates": [
                 {
@@ -10,7 +72,17 @@
         }
     },
     "G": {
-        "A": {
+        "J": {
+            "weight": 4,
+            "coordinates": [
+                {
+                    "coordinate": 1
+                }
+            ]
+        }
+    },
+    "L": {
+        "J": {
             "weight": 3,
             "coordinates": [
                 {
@@ -18,11 +90,84 @@
                 }
             ]
         },
-        "B": {
+        "D": {
+            "weight": 2,
+            "coordinates": [
+                {
+                    "coordinate": 0
+                }
+            ]
+        },
+        "K": {
             "weight": 2,
             "coordinates": [
                 {
                     "coordinate": 1
+                }
+            ]
+        },
+        "M": {
+            "weight": 2,
+            "coordinates": [
+                {
+                    "coordinate": 3
+                }
+            ]
+        }
+    },
+    "D": {
+        "L": {
+            "weight": 2,
+            "coordinates": [
+                {
+                    "coordinate": 2
+                }
+            ]
+        }
+    },
+    "K": {
+        "L": {
+            "weight": 2,
+            "coordinates": [
+                {
+                    "coordinate": 3
+                }
+            ]
+        },
+        "C": {
+            "weight": 2,
+            "coordinates": [
+                {
+                    "coordinate": 0
+                }
+            ]
+        },
+        "B": {
+            "weight": 4,
+            "coordinates": [
+                {
+                    "coordinate": 1
+                },
+                {
+                    "coordinate": 0
+                }
+            ]
+        }
+    },
+    "M": {
+        "L": {
+            "weight": 2,
+            "coordinates": [
+                {
+                    "coordinate": 1
+                }
+            ]
+        },
+        "E": {
+            "weight": 2,
+            "coordinates": [
+                {
+                    "coordinate": 0
                 }
             ]
         },
@@ -31,104 +176,55 @@
             "coordinates": [
                 {
                     "coordinate": 3
-                }
-            ]
-        },
-        "H": {
-            "weight": 2,
-            "coordinates": [
-                {
-                    "coordinate": 0
-                }
-            ]
-        }
-    },
-    "B": {
-        "G": {
-            "weight": 2,
-            "coordinates": [
-                {
-                    "coordinate": 3
-                }
-            ]
-        }
-    },
-    "F": {
-        "G": {
-            "weight": 4,
-            "coordinates": [
-                {
-                    "coordinate": 1
-                }
-            ]
-        }
-    },
-    "H": {
-        "G": {
-            "weight": 2,
-            "coordinates": [
-                {
-                    "coordinate": 2
-                }
-            ]
-        },
-        "E": {
-            "weight": 2,
-            "coordinates": [
-                {
-                    "coordinate": 3
-                }
-            ]
-        },
-        "D": {
-            "weight": 1,
-            "coordinates": [
-                {
-                    "coordinate": 0
-                }
-            ]
-        },
-        "C": {
-            "weight": 7,
-            "coordinates": [
-                {
-                    "coordinate": 1
                 },
                 {
-                    "coordinate": 2
-                }
-            ]
-        }
-    },
-    "E": {
-        "H": {
-            "weight": 2,
-            "coordinates": [
-                {
-                    "coordinate": 1
-                }
-            ]
-        }
-    },
-    "D": {
-        "H": {
-            "weight": 1,
-            "coordinates": [
-                {
-                    "coordinate": 2
+                    "coordinate": 0
                 }
             ]
         }
     },
     "C": {
-        "H": {
-            "weight": 7,
+        "K": {
+            "weight": 2,
             "coordinates": [
                 {
-                    "coordinate": 0
+                    "coordinate": 2
+                }
+            ]
+        }
+    },
+    "B": {
+        "K": {
+            "weight": 4,
+            "coordinates": [
+                {
+                    "coordinate": 2
                 },
                 {
                     "coordinate": 3
+                }
+            ]
+        }
+    },
+    "E": {
+        "M": {
+            "weight": 2,
+            "coordinates": [
+                {
+                    "coordinate": 2
+                }
+            ]
+        }
+    },
+    "F": {
+        "M": {
+            "weight": 4,
+            "coordinates": [
+                {
+                    "coordinate": 2
+                },
+                {
+                    "coordinate": 1
                 }
             ]
         }

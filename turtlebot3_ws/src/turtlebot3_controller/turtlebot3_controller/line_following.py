@@ -25,6 +25,7 @@ def calculate_centroid(resolution, image):
             return 0, 0, binary
         
         half_bottom_floor = (resolution[0] - y_shape) // 2
+        half_bottom_floor = min(half_bottom_floor, resolution[0]//2)
         binary = binary[-half_bottom_floor:, :]
 
         # centroid navigation, calculate moments of binary image

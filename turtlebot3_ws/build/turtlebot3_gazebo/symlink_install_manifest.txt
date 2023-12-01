@@ -10,6 +10,8 @@
 /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_world.launch.py
 /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/HospitalTrack/model.config
 /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/HospitalTrack/model.sdf
+/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/HospitalWalls/model.config
+/home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/HospitalWalls/model.sdf
 /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/SimpleTrack/model.config
 /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/SimpleTrack/model.sdf
 /home/bctat/turtlebot3ros/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/hospital_test/model.config
